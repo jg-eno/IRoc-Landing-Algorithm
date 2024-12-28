@@ -44,32 +44,24 @@ The scoring mechanism evaluates each candidate landing spot based on three key m
 1. **Planarity Score**:
    - Measures how flat the surface is.
    - Calculated as:  
-     \[
-     \text{Planarity Score} = 1.0 - \left(\frac{\text{Local Slope}}{\text{Max Slope}}\right)
-     \]
+     \[\text{Planarity Score} = 1.0 - \left(\frac{\text{Local Slope}}{\text{Max Slope}}\right)\]
    - A higher score indicates a flatter surface.
 
 2. **Flatness Score**:
    - Measures the surface roughness (standard deviation of Z-values).
    - Calculated as:  
-     \[
-     \text{Flatness Score} = 1.0 - \left(\frac{\text{Local StdDev}}{\text{Max StdDev}}\right)
-     \]
+     \[\text{Flatness Score} = 1.0 - \left(\frac{\text{Local StdDev}}{\text{Max StdDev}}\right)\]
    - A higher score indicates a smoother surface.
 
 3. **Density Score**:
    - Measures the number of supporting points in the neighborhood.
    - Calculated as:  
-     \[
-     \text{Density Score} = \min\left(1.0, \frac{\text{Number of Points}}{1000}\right)
-     \]
+     \[\text{Density Score} = \min\left(1.0, \frac{\text{Number of Points}}{1000}\right)\]
    - A higher score indicates a denser neighborhood, which provides more reliable plane fitting.
 
 4. **Weighted Total Score**:
    - The total score is a weighted combination of the three metrics:  
-     \[
-     \text{Total Score} = (\text{Planarity Score} \times 0.4) + (\text{Flatness Score} \times 0.4) + (\text{Density Score} \times 0.2)
-     \]
+     \[\text{Total Score} = (\text{Planarity Score} \times 0.4) + (\text{Flatness Score} \times 0.4) + (\text{Density Score} \times 0.2)\]
    - The weights emphasize planarity and flatness over density.
 
 ---
