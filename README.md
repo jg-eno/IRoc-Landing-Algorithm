@@ -70,6 +70,7 @@ The scoring mechanism evaluates each candidate landing spot based on three key m
      ```
      Total Score = (Planarity Score × 0.4) + (Flatness Score × 0.4) + (Density Score × 0.2)
      ```
+   - Here, the values 0.4, 0.4, and 0.2 represent the weights assigned to the Planarity Score, Flatness Score, and Density Score, respectively. These weights determine the relative importance of each metric in the final scoring calculation.
    - The weights emphasize planarity and flatness over density.
 ---
 
