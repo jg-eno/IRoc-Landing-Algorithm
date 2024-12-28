@@ -11,18 +11,18 @@ An autonomous landing spot detection algorithm for UAVs using LiDAR point cloud 
    - The normalized data is converted into an Open3D point cloud object for further analysis.
 
 2. **Point Cloud Downsampling**:
-   - The point cloud is downsampled using voxel downsampling to reduce the number of points while preserving the overall structure.
+   - The point cloud is downsampled using `voxel downsampling` to reduce the number of points while preserving the overall structure.
 
 3. **Octree Construction**:
    - An octree data structure is built from the downsampled point cloud to efficiently query neighborhoods around specific points.
 
 4. **Plane Detection**:
    - For each sampled point, a neighborhood is queried using the octree.
-   - Principal Component Analysis (PCA) is used to detect planar surfaces within the neighborhood. The normal vector of the plane and its planarity score are computed.
+   - `Principal Component Analysis (PCA)` is used to detect planar surfaces within the neighborhood. The normal vector of the plane and its planarity score are computed.
 
 5. **Plane Evaluation**:
    - Each detected plane is evaluated based on its slope and surface roughness (standard deviation of Z-values).
-   - Planes that meet the criteria (e.g., slope ≤ 30°, roughness ≤ threshold) are considered as potential landing spots.
+   - Planes that meet the criteria (e.g., slope ≤ `30°`, roughness ≤ threshold) are considered as potential landing spots.
 
 6. **Scoring Mechanism**:
    - Each candidate landing spot is scored based on three key metrics:
