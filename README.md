@@ -1,10 +1,10 @@
-# IRoc Landing Algorithm
+ # IRoc Landing Algorithm
 
 An autonomous landing spot detection algorithm for UAVs using LiDAR point cloud data. This algorithm analyzes terrain characteristics to identify optimal landing locations based on factors like slope, surface roughness, and point density.
 
 ## Dataset
 
-The algorithm uses LiDAR point cloud data from Globhe. You can download the sample dataset here:
+The algorithm uses LiDAR point cloud data from Globhe. You can download the sample dataset here:  
 [Globhe Sample LiDAR Point Cloud Dataset](https://share.hsforms.com/1pN-7jq6HTby9FXlgqEz3NAbnbxm)
 
 ## Project Structure
@@ -42,23 +42,31 @@ Visualization utility that:
 
 ## Usage
 
-1. Install the required dependencies:
-```bash
-pip install -r requirements.txt
-```
+1. Install the required dependencies:  
 
-2. Download the sample LiDAR dataset from the provided link
+   ### Using Conda:
+   ```bash
+   conda create -n iroc_env -c conda-forge laspy=2.0.0 numpy=1.26.4 open3d=0.18.0 pandas=2.2.3 scikit-learn=1.6.0
+   conda activate iroc_env
+   ```
+
+   ### Using pip:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. Download the sample LiDAR dataset from the provided link.
 
 3. Run the landing spot detection:
-```bash
-python "Landing Algorithm.py"
-```
+   ```bash
+   python "Landing Algorithm.py"
+   ```
 
 4. Once the algorithm identifies the best landing spot, visualize it:
-```bash
-python Visual.py
-```
-When prompted, enter the landing spot coordinates output by the algorithm.
+   ```bash
+   python Visual.py
+   ```
+   When prompted, enter the landing spot coordinates output by the algorithm.
 
 ## Output
 
@@ -72,4 +80,3 @@ The algorithm will:
 
 - Python 3.10 or higher
 - See `requirements.txt` for package dependencies
- 
